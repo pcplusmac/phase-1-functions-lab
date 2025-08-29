@@ -3,6 +3,8 @@ const hq = 42;
 let pickup;
 let startBlock;
 let endBlock;
+let start;
+let destination;
 
 function distanceFromHqInBlocks(pickup) {
     let distanceInBlock;
@@ -39,5 +41,26 @@ function distanceTravelledInFeet(startBlock,endBlock) {
         return distanceTravel;
     } else {
         return "lazy!"
+    }
+}
+
+
+function calculatesFarePrice(start, destination) {
+    let fare;
+    let feet = distanceTravelledInFeet(start,destination);
+    if (feet <= 400) {
+        fare = 0;
+        return (fare)
+
+    } else if ((feet > 400 ) && (feet <= 2000)) {
+        fare = (feet - 400 ) *0.02;
+        return fare;
+    }else if ((feet > 2000) && (feet <= 2500)) {
+        fare = 25;
+        return fare;
+    }else if (feet > 2500) {
+        return "cannot travel that far"
+    }else {
+        return "what can i do for you?"
     }
 }
