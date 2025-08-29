@@ -17,3 +17,9 @@ function distanceFromHqInBlocks(pickup) {
     }
 }
 
+function distanceFromHqInFeet(pickup) {
+    let blocks = distanceFromHqInBlocks(pickup);
+    let distanceInFeet = blocks * 264;
+    return (distanceInFeet);
+}
+
